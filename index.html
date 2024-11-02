@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Mental de la UABIG</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(to right, #e0f7fa, #e1bee7);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        h1 {
+            color: #1E90FF;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .map-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            gap: 40px;
+        }
+        .center-node {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #1E90FF;
+            padding: 15px 25px;
+            background-color: #fff;
+            border: 3px solid #1E90FF;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .center-node::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #1E90FF;
+        }
+        .branch {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            padding-top: 20px;
+        }
+        .node {
+            position: relative;
+            font-weight: bold;
+            color: #333;
+            padding: 12px 15px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 8px;
+            text-align: center;
+            width: 180px;
+            font-size: 1.1em;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        /* Horizontal lines from center node to each branch node */
+        .branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #1E90FF;
+        }
+        .node::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 20px;
+            background-color: #1E90FF;
+        }
+        .sub-branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .sub-branch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #bbb;
+        }
+        .sub-node {
+            position: relative;
+            padding: 8px 12px;
+            background-color: #eee;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            text-align: center;
+            width: 160px;
+            font-size: 0.9em;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .sub-node::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapa Mental de la entrevista.</h1>
+
+    <div class="map-container">
+        <div class="center-node">UABIG - Unidad de Atención a la Violencia de Género</div>
+
+        <div class="branch">
+            <div class="node">Origen y Contexto
+                <div class="sub-branch">
+                    <div class="sub-node">Compromisos Internacionales</div>
+                    <div class="sub-node">Normativa Nacional</div>
+                    <div class="sub-node">Creación de la UABIG (2018)</div>
+                </div>
+            </div>
+
+            <div class="node">Estructura y Funciones
+                <div class="sub-branch">
+                    <div class="sub-node">Atención a Víctimas</div>
+                    <div class="sub-node">Colaboración con Otros Departamentos</div>
+                    <div class="sub-node">Actualización de Protocolos (2020)</div>
+                </div>
+            </div>
+
+            <div class="node">Retos y Obstáculos
+                <div class="sub-branch">
+                    <div class="sub-node">Resistencia Social y Cultural</div>
+                    <div class="sub-node">Posicionamiento de la UABIG</div>
+                </div>
+            </div>
+
+            <div class="node">Logros y Proyección a Futuro
+                <div class="sub-branch">
+                    <div class="sub-node">Consolidación como Red de Apoyo</div>
+                    <div class="sub-node">Objetivos a Largo Plazo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
